@@ -1,0 +1,236 @@
+:root {
+    --color-accent-green : #DCFF70;
+    --color-text-inactive: #9BAC9B;
+    --color-display-text: #E7EFCE;
+    --background-highlight-button: rgba(216, 216, 216, 0.8);
+    --background-normal-button: rgba(216, 216, 216, 0.4);
+    --background-main: #243B19;
+    --color-white: #F5F5F5;
+    --custom-border-radius: 10%;
+    --global-padding: 1.875rem;
+    --global-main-width: 43.875rem;
+}
+
+@font-face {
+    font-family: PTmono;
+    src: url('../fonts/PTMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: SevenSegment;
+    src: url('../fonts/SevenSegment.ttf');
+}
+
+*, body, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: none;
+    font-family: PTMono, monospace;
+    user-select: none;
+    list-style-type: none;
+}
+
+body {
+    background: url('../assets/bg_pattern.png');
+    background-size: 9.375rem 9.375rem; 
+}
+
+header, main, footer {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    margin: 1.5rem 0 3rem 0;
+    overflow: visible;
+}
+
+aside, section {
+    background: var(--background-main);
+    border-radius: 1.125rem;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 3.375rem;
+    color: var(--color-accent-green);
+    float: left;
+}
+h2 {
+    font-size: 1.4rem;
+}
+
+.header {
+    width: var(--global-main-width);
+}
+
+aside {
+    width: 14.72rem;
+    font-size: 1.4rem;
+    color: var(--color-text-inactive);
+}
+
+hr {
+    height:3.65625rem;
+    background: transparent;
+}
+
+.history-panel, .left-menu {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    overflow: visible;
+}
+
+.history-panel {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.history-panel h2 {
+    height: 100px;
+}
+
+.history-panel .history {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto !important;
+    max-height: 30rem;
+    height: fit-content !important;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    scroll-snap-type:y mandatory;
+}
+
+.history-items {
+    scroll-snap-align: start;
+    margin-top: 0.8rem;
+    text-align: right;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    user-select: text;
+    padding: 2px;
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    border-bottom-width: 2px !important;
+    height: fit-content;
+}
+
+.history-items div {
+    padding: 2px;
+    width: 100%;
+    text-align: right;;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    user-select: text;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.history-items div:hover {
+    background: rgba(255, 255, 255, 0.1)
+}
+
+.left-menu li{
+    padding: 10px;
+    box-shadow: 0 0 0 transparent;
+    margin: 5px;
+    position: relative;
+    z-index: 3;
+    transition: all 0.1s;
+}
+
+.left-menu li::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100%;
+    z-index: 0;
+    mix-blend-mode: lighten;
+    border-radius: 50% 0% 50% 0%;
+    filter: blur(0.5rem);
+    transform: scale(0.8);
+    transition: all 0.1s;
+
+}
+
+.left-menu li:hover::before {
+    background: rgba(0,0,0,0.5);
+}
+
+.left-menu li#active {
+    color:var(--color-accent-green);
+}
+
+.left-menu li:hover {
+    transform: scale(1.03);
+}
+
+.left-menu ul:not(.hidden-left-menu) li:last-child {
+    /* background: red; */
+    position: relative;
+    height: 3rem;
+}
+
+.hidden-left-menu {
+    display: none;
+    position: absolute;
+    top: -10rem;
+    left: 95%;
+    background: var(--background-main);
+    border-radius: 1.125rem;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.2), 0.5rem 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.left-menu ul:not(.hidden-left-menu) li:last-child:hover .hidden-left-menu{
+    display: block;
+}
+
+footer {
+   margin: 0;
+   background: black;
+   color: white;
+   padding: 1.5rem 0 3rem 0;
+}
+
+footer .footer-wrapper {
+    max-width: var(--global-main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+footer h2 {
+    width: 100%;
+    text-align: left;
+    display: block;
+}
+footer h2 {
+    display: block;
+}
+
+footer p {
+    text-align: left;
+}
+
+.footer-para {
+    width: 100%;
+}
+
+.footer-para a {
+    color: var(--color-accent-green);
+    text-decoration: underline;
+}

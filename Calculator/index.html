@@ -9,7 +9,8 @@
       name="description"
       conent="online calculator with multiple funcitonalities, like conversion tools, scientific calculator, and many more."
     />
-    <link rel="stylesheet" href="stylesheet/index.css" />
+    <link rel="stylesheet" href="stylesheet/calculator_simple.css" />
+    <link rel="stylesheet" href="stylesheet/global.css" />
     <body>
       <header>
         <div class="header">
@@ -21,38 +22,41 @@
             <aside id="leftMenu" class="left-menu">
             <nav>
                 <ul>
-                <li>Simple</li>
-                <li>Scientific</li>
-                <li>Interests</li>
-                <li>
-                    Converter
-                    <ul id="hiddenleftMenu" class="hidden-left-menu">
-                    <li>Distance</li>
-                    <li>Temperature</li>
-                    <li>Angle</li>
-                    <li>Area</li>
-                    <li>Data</li>
-                    <li>Energy</li>
-                    <li>Force</li>
-                    <li>Fuel</li>
-                    <li>Power</li>
-                    <li>Speed</li>
-                    <li>Currency</li>
-                    </ul>
-                </li>
+                  <li id="active">Simple</li>
+                  <li>Scientific</li>
+                  <li>Interests</li>
+                  <li>
+                      Converter
+                      <ul id="hiddenLeftMenu" class="hidden-left-menu">
+                        <li>Distance</li>
+                        <li>Temperature</li>
+                        <li>Angle</li>
+                        <li>Area</li>
+                        <li>Data</li>
+                        <li>Energy</li>
+                        <li>Force</li>
+                        <li>Fuel</li>
+                        <li>Power</li>
+                        <li>Speed</li>
+                        <li>Currency</li>
+                      </ul>
+                  </li>
                 </ul>
             </nav>
             </aside>
             
             <section id="main" class="main">
                 <div id="display" class="display">
-                    7830+2432
+                    10+(-2)+1
                 </div>
                     <div id="buttons" class="buttons-wrapper">
                         <button id="buttonSeven">7</button>
                         <button id="buttonEight">8</button>
                         <button id="buttonNine">9</button>
-                        <button id="buttonErase" class="calculator-button-bright">&lt;X</button>
+                        <button id="buttonErase" class="calculator-button-bright">
+                          <div class="button-erase-left-arrow"></div>
+                          <div class="button-erase-x-content">x</div>
+                        </button>
                         <button id="buttonDivision" class="calculator-button-accent">/</button>
                         <button id="buttonFour">4</button>
                         <button id="buttonFive">5</button>
@@ -75,20 +79,30 @@
             
             <aside id="historyPanel" class="history-panel">
             <h2>History</h2>
+            <div class="history">
+              <div id="item1" class="history-items">2+2<div>4</div></div>
+            </div>
             </aside>
         </div>
       </main>
       <footer>
-        <h2>About</h2>
-        <p>
-            This is a learning mini project. Hope you like it.
-        </p>
-        <p>
-            <a href="mailto:ur.dev6@gmail.com">
-                Send a mail to me
-            </a>
-        </p>
+        <div class="footer-wrapper">
+          <h2>About</h2>
+          <div class="footer-para">
+            <p>
+                This is a learning mini project. Hope you like it.
+            </p>
+            <p>
+                <a href="mailto:ur.dev6@gmail.com">
+                    Send a mail to me
+                </a>
+            </p>
+          </div>
+        </div>
       </footer>
+
+
+      <script src="script/calculator.js"></script>
     </body>
   </head>
 </html>

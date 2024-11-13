@@ -1,0 +1,118 @@
+button {
+    width: 6.5625rem;
+    height: 3.75rem;
+    background: var(--background-normal-button);
+    border-radius: var(--custom-border-radius);
+}
+
+button.calculator-button-bright {
+    background-color: var(--background-highlight-button);
+}
+
+button.calculator-button-accent {
+    background-color: var(--color-accent-green);
+}
+
+.main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2.25rem;
+}
+
+section.main {
+    width: var(--global-main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.display {
+    width: 36.5625rem;
+    min-width: 36.5625rem;
+    margin: 3.65265rem;
+    height: 7.5rem;
+    color: var(--color-display-text);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 3rem;
+    font-family: SevenSegment;
+    border: 1px solid #979797;
+    border-radius: 0.45rem;
+    padding: 0.9375rem;
+    background: linear-gradient(#000, #222);
+    user-select: text;
+}
+
+.buttons-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 36.5625;
+    grid-gap: 0.9rem;
+    align-items: center;
+    justify-content :space-between;
+}
+
+.buttons-wrapper button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.6), 0 0 0 black;
+    transition: all 0.1s ease-in-out;
+}
+
+.buttons-wrapper button:not(.calculator-button-accent):not(.calculator-button-bright) {
+    color: var(--color-white) !important;
+}
+
+.buttons-wrapper button:hover {
+    box-shadow: 0 0 5rem 0.5rem rgba(0, 0, 0, 0.5), 0 0 1rem black;
+    filter: brightness(70%);
+}
+
+.buttons-wrapper:hover button:not(:hover) {
+    filter: brightness(110%);
+    transition: all 0.2s;
+}
+
+.buttons-wrapper button:active {
+    box-shadow: 0 0 5rem 0.5rem rgba(0, 0, 0, 0.5), 0 0 0 black;
+    outline: 1px solid white;
+    transform: scale(0.9);
+}
+
+.buttons {
+    width:fit-content;
+}
+
+#buttonErase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-erase-left-arrow {
+    height: 1.45rem;
+    width: 1.45rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    rotate: -45deg;
+    transform: translate(0.55rem, 0.55rem);
+}
+
+.button-erase-x-content {
+    border: 3px solid black;
+    border-left-color: transparent;
+    border-left-width: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.3rem;
+    padding: 0;
+    margin: 0;
+}
