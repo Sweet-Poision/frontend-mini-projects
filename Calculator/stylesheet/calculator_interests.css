@@ -1,0 +1,28 @@
+button {
+    width: 6.5625rem;
+    height: 3.75rem;
+    background: var(--background-normal-button);
+    border-radius: var(--custom-border-radius);
+}
+
+button.calculator-button-bright {
+    background-color: var(--background-highlight-button);
+}
+
+button.calculator-button-accent {
+    background-color: var(--color-accent-green);
+}
+
+.main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2.25rem;
+}
+
+section.main {
+    width: var(--global-main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
