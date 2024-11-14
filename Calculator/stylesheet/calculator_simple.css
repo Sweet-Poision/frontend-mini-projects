@@ -32,17 +32,26 @@ div.display {
     min-width: 36.5625rem;
     margin: 3.65265rem;
     height: 7.5rem;
+    border-radius: 0.45rem;
+    background: linear-gradient(#000, #222);
+    user-select: text;
+    overflow: hidden;
+    border: 1px solid white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.display div {
     color: var(--color-display-text);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 3rem;
     font-family: SevenSegment;
-    border: 1px solid #979797;
     border-radius: 0.45rem;
-    padding: 0.9375rem;
-    background: linear-gradient(#000, #222);
-    user-select: text;
+    margin: 0.9375rem;
+    max-width: calc(36.5635rem - (0.9375rem)*2);
+    overflow: hidden;
 }
 
 .buttons-wrapper {
@@ -55,6 +64,7 @@ div.display {
 }
 
 .buttons-wrapper button {
+    color: black;
     font-size: 1.5rem;
     font-weight: 700;
     box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.6), 0 0 0 black;
@@ -115,4 +125,36 @@ div.display {
     line-height: 1.3rem;
     padding: 0;
     margin: 0;
+}
+
+@media all and (max-width: 750px) {
+    .buttons-wrapper {
+        grid-gap: 0.2rem;
+        transition: all 250ms;
+    }
+
+    button {
+        transition: all 250ms;
+        width: 4rem;
+    }
+
+    div.display {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: 20.5rem;
+        transition: all 250ms;
+        min-width: 20.5rem;
+    }
+
+    section.main {
+        transition: all 250ms;
+        width: 23rem;
+    }
+
+    div.display div {
+        transition: all 250ms;
+        width: 18rem;
+        min-width: 5rem;
+        opacity: 1;
+    }
 }

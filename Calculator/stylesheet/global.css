@@ -38,6 +38,10 @@
 body {
     background: url('../assets/bg_pattern.png');
     background-size: 9.375rem 9.375rem; 
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 100vh;
 }
 
 header, main, footer {
@@ -46,6 +50,7 @@ header, main, footer {
     justify-content: center;
     margin: 1.5rem 0 3rem 0;
     overflow: visible;
+
 }
 
 aside, section {
@@ -105,12 +110,13 @@ hr {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;
     scroll-snap-type:y mandatory;
+    align-items: flex-end;
+    direction: rtl;
 }
 
 .history-items {
     scroll-snap-align: start;
     margin-top: 0.8rem;
-    text-align: right;
     width: 100%;
     font-size: 1.2rem;
     display: flex;
@@ -120,6 +126,10 @@ hr {
     border: 0px solid rgba(255, 255, 255, 0.2);
     border-bottom-width: 2px !important;
     height: fit-content;
+    max-width: 11rem;
+    overflow: visible;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
 }
 
 .history-items div {
@@ -146,6 +156,11 @@ hr {
     transition: all 0.1s;
 }
 
+li a {
+    color: var(--color-text-inactive);
+    cursor: default;
+}
+
 .left-menu li::before {
     position: absolute;
     content: '';
@@ -160,7 +175,7 @@ hr {
     filter: blur(0.5rem);
     transform: scale(0.8);
     transition: all 0.1s;
-
+    pointer-events: none;
 }
 
 .left-menu li:hover::before {
@@ -196,6 +211,7 @@ hr {
 }
 
 footer {
+    margin-top: auto !important;
    margin: 0;
    background: black;
    color: white;
@@ -233,4 +249,87 @@ footer p {
 .footer-para a {
     color: var(--color-accent-green);
     text-decoration: underline;
+}
+
+.aside-left-menu-button, .aside-right-menu-button {
+    display: none;
+}
+
+@media all and (max-width: 1280px) {
+    .aside-left-menu-button {
+        display: block;
+        background: linear-gradient(to top, var(--color-accent-green) 25%, transparent 26% 75%, var(--color-accent-green) 76%);
+        border-radius: 0;
+        width: 1.5rem;
+        height: 1rem;
+        margin: 1rem;
+    }
+    .left-menu {
+        position: absolute;
+        left: 1rem;
+        padding: 0;
+        width: 5rem;
+        transition: all 250ms;
+        overflow: visible;
+    }
+
+    .left-menu:hover {
+        width: 14.72rem;
+    }
+    .left-menu:hover nav {
+        display: block;
+    }
+
+    .left-menu nav {
+        display: none;
+
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .aside-right-menu-button {
+        display: block;
+        background: linear-gradient(to top, var(--color-accent-green) 25%, transparent 26% 75%, var(--color-accent-green) 76%);
+        border-radius: 0;
+        width: 1.5rem;
+        height: 1rem;
+        margin: 1rem;
+        rotate: 90deg;
+    }
+
+    .history-panel h2, .history-panel .history {
+        display: none;
+    }
+
+    .history-panel {
+        position: absolute;
+        right: 1rem;
+        width: 5rem;
+        padding: 0;
+        transition: all 250ms;
+    }
+
+    .history-panel:hover h2 {
+        margin-top: 1rem;
+        display: block;
+    }
+
+    .history-panel:hover .history {
+        display: flex;
+    }
+
+    .history-panel:hover {
+        width: 14.72rem;
+    }
+
+    .history-panel:hover button {
+        display: none;
+        padding: 1.5rem;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .header {
+        margin-left: 1.4rem;
+    }
 }

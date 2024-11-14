@@ -19,12 +19,13 @@
       </header>
       <main>
         <div class="main-content-wrapper">
-            <aside id="leftMenu" class="left-menu">
+          <aside id="leftMenu" class="left-menu">
+              <button class="aside-left-menu-button"></button>
             <nav>
                 <ul>
                   <li id="active">Simple</li>
-                  <li>Scientific</li>
-                  <li>Interests</li>
+                  <li><a href="scientific.html">Scientific</a></li>
+                  <li><a href="interests.html">Interests</a></li>
                   <li>
                       Converter
                       <ul id="hiddenLeftMenu" class="hidden-left-menu">
@@ -46,8 +47,10 @@
             </aside>
             
             <section id="main" class="main">
-                <div id="display" class="display">
-                    10+(-2)+1
+                <div class="display">
+                  <div id="display">
+                    0
+                  </div>
                 </div>
                     <div id="buttons" class="buttons-wrapper">
                         <button id="buttonSeven">7</button>
@@ -78,9 +81,10 @@
             </section>
             
             <aside id="historyPanel" class="history-panel">
+              <button class="aside-right-menu-button"></button>
             <h2>History</h2>
-            <div class="history">
-              <div id="item1" class="history-items">2+2<div>4</div></div>
+            <div id="historyArea" class="history">
+              <!--<div id="itemX" class="history-items"> expression <div> solution </div></div>-->
             </div>
             </aside>
         </div>
