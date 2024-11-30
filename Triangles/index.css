@@ -1,0 +1,36 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.region div {
+    border: 10px solid red;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: pink;
+    border-right-width: 50px;
+    border-bottom-width: 70px;
+    border-left-width: 20px;
+    border-top-width: 100px;
+    position: fixed;
+    top: 0%; /* -20% to 80%*/
+    right: -5%; /* -5 to 95% */ 
+}
+
+.buttons {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: 15px;
+    transition: all 0.28s;
+}
+
+button:hover {
+    background: pink;
+}
