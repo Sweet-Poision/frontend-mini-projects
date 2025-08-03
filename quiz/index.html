@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome screen active" id="welcome">
+            <h1>Welcome to Quiz App</h1>
+            <p>There will be <span id="question-number"><!--Question number to be inserted here--></span> Questions</p>
+            <button class="start-quiz" id="start-quiz">Start Quiz</button>
+        </div>
+        <div class="quiz screen" id="quiz">
+            <h1>Quiz</h1>
+            <h3 id="question-statement">Question</h3>
+            <div class="status">
+                <p>Question <span id="question-number-current">1</span> of <span id="question-number">5</span> </p>
+                
+            </div>
+            <div class ="options" id="options">
+                <button id="option-1">something</button>
+                <button id="option-2">something</button>
+                <button id="option-3">something</button>
+                <button id="option-4">something</button>
+            </div>
+            <div class="submit">
+                <button id="check-answer">Check Answer</button>
+                <button id="submit-answer">Next</button>
+            </div>
+            <div class ="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+        <div class="screen finish" id="finish-screen">
+            <h1>Quiz Complete</h1>
+            <h2>Your Score</h2>
+            <h2><span id="percentage-score"></span></h2>
+            <button id="restart-quiz">Restart Quiz</button>
+        </div>
+            
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
